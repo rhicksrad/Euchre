@@ -127,6 +127,7 @@ function StartBackground() {
 }
 
 function CharacterShowcase() {
+  const baseUrl = (import.meta as any).env?.BASE_URL || '/';
   // Display 6 character avatars in a gentle marquee to add motion
   const ids = CHARACTERS.slice(0, 6).map((c) => c.id);
   return (
