@@ -10,6 +10,7 @@ import { Achievements } from '../ui/screens/Achievements';
 import { Stats } from '../ui/screens/Stats';
 import { Daily } from '../ui/screens/Daily';
 
+const basename = (import.meta as any).env?.BASE_URL ? (import.meta as any).env.BASE_URL.replace(/\/$/, '') : '';
 export const router = createBrowserRouter([
   {
     path: '/',
@@ -26,6 +27,6 @@ export const router = createBrowserRouter([
       { path: '*', element: <NotFound /> },
     ],
   },
-]);
+], { basename });
 
 

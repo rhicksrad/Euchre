@@ -10,6 +10,7 @@ export function StartScreen() {
   const savedPhase = getSavedGamePhase();
   const tut = useTutorial();
   const daily = getDailyChallenge();
+  const baseUrl = (import.meta as any).env?.BASE_URL || '/';
   return (
     <section className="relative isolate mx-auto max-w-6xl grid grid-rows-[auto_1fr_auto] gap-8 min-h-[80vh] justify-center text-center">
       <StartBackground />
@@ -133,7 +134,7 @@ function CharacterShowcase() {
       <div className="flex gap-6 animate-marquee whitespace-nowrap">
         {ids.concat(ids).map((id, i) => (
           // Use CSS mask to avoid broken image icons briefly flashing
-          <img key={`${id}-${i}`} src={`/characters/${id}.svg`} alt="" className="h-12 w-12 object-contain opacity-80 [mask-image:linear-gradient(black,black)]" onError={(e) => { (e.currentTarget as HTMLImageElement).style.display = 'none'; }} />
+          <img key={`${id}-${i}`} src={`${baseUrl}characters/${id}.svg`} alt="" className="h-12 w-12 object-contain opacity-80 [mask-image:linear-gradient(black,black)]" onError={(e) => { (e.currentTarget as HTMLImageElement).style.display = 'none'; }} />
         ))}
       </div>
     </div>

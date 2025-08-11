@@ -151,9 +151,13 @@ class GameAudio {
   private async tryLoadFirstAvailable(paths: string[]): Promise<AudioBuffer | null> {
     const ctx = this.ctx;
     if (!ctx) return null;
+    const baseUrl: string = (import.meta as any).env?.BASE_URL || '/';
+    const normalizedBase = baseUrl.endsWith('/') ? baseUrl : baseUrl + '/';
     for (const p of paths) {
       try {
-        const res = await fetch(p);
+        const normalized = p.startsWith('/') ? p.slice(1) : p;
+        const url = `${normalizedBase}${normalized}`;
+        const res = await fetch(url);
         if (!res.ok) continue;
         const buf = await res.arrayBuffer();
         const audioBuf = await ctx.decodeAudioData(buf);

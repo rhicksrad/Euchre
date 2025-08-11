@@ -9,7 +9,8 @@ export function SeatAvatar({ id }: { id: CharacterId | null }) {
 
   useEffect(() => {
     let cancelled = false;
-    const src = `/characters/${id}.svg`;
+    const baseUrl = (import.meta as any).env?.BASE_URL || '/';
+    const src = `${baseUrl}characters/${id}.svg`;
     fetch(src, { cache: 'no-store' })
       .then(async (r) => {
         if (!r.ok) throw new Error(`HTTP ${r.status}`);
