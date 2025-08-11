@@ -1,0 +1,82 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" role="img" aria-label="Canoeist — older Asian man with gray hair, almond eyes, life jacket and paddle">
+  <style>
+    :root{
+      --line:#121212;
+
+      /* Skin & hair */
+      --skin:#f1c8a8;
+      --blush:#e5b19b;
+      --hair:#858585;          /* gray hair */
+      --hair-shade:#6f6f6f;
+
+      /* PFD + canoe */
+      --pfd:#e27a24;
+      --pfd-trim:#a85a16;
+      --strap:#2d2d2d;
+      --canoe:#4e6b57;
+      --canoe-trim:#2c3a33;
+
+      /* Paddle */
+      --wood:#b8844f;
+      --wood-dark:#8a623c;
+
+      --shadow:#00000022;
+    }
+    .s{stroke:var(--line);stroke-width:5.2;stroke-linecap:round;stroke-linejoin:round}
+    .sf{stroke:var(--line);stroke-width:4;stroke-linecap:round;stroke-linejoin:round}
+  </style>
+
+  <defs>
+    <clipPath id="head"><circle cx="128" cy="140" r="60"/></clipPath>
+  </defs>
+
+  <!-- Face -->
+  <circle class="s" cx="128" cy="140" r="60" fill="var(--skin)"/>
+  <circle class="s" cx="62"  cy="140" r="12" fill="var(--skin)"/>
+  <circle class="s" cx="194" cy="140" r="12" fill="var(--skin)"/>
+
+  <!-- Full gray hair dome (covers whole top, inside head) -->
+  <path clip-path="url(#head)" fill="var(--hair)"
+        d="M60 92
+           Q128 52 196 92
+           L196 128
+           Q128 114 60 128Z"/>
+  <path clip-path="url(#head)" d="M76 98 Q128 70 180 98" stroke="var(--hair-shade)" stroke-width="3" opacity=".35" fill="none"/>
+
+  <!-- Under-hair forehead shadow -->
+  <ellipse cx="128" cy="112" rx="80" ry="10" fill="var(--shadow)" clip-path="url(#head)"/>
+
+  <!-- Eyes: soft almond/monolid set -->
+  <ellipse cx="108" cy="142" rx="8" ry="3" fill="#111" transform="rotate(-6 108 142)"/>
+  <ellipse cx="148" cy="142" rx="8" ry="3" fill="#111" transform="rotate(6 148 142)"/>
+
+  <!-- Brows / nose / smile -->
+  <path class="sf" d="M96 126q12-6 24-5" fill="none"/>
+  <path class="sf" d="M136 121q12-1 24 5" fill="none"/>
+  <path class="sf" d="M128 148c-2 6-2 8 0 10" fill="none"/>
+  <path class="sf" d="M104 162q24 12 48 0" fill="none"/>
+  <circle cx="100" cy="154" r="9" fill="var(--blush)" opacity=".9"/>
+  <circle cx="156" cy="154" r="9" fill="var(--blush)" opacity=".9"/>
+
+  <!-- Gentle crow’s-feet -->
+  <path class="sf" d="M90 144q-6 2-10 6" opacity=".45" fill="none"/>
+  <path class="sf" d="M166 144q6 2 10 6" opacity=".45" fill="none"/>
+
+  <!-- PFD -->
+  <g>
+    <path class="s" fill="var(--pfd-trim)" d="M70 204a58 28 0 0 0 116 0v16a90 40 0 0 1-116 0v-16z"/>
+    <path class="s" fill="var(--pfd)" d="M76 202a52 22 0 0 0 104 0H76z"/>
+    <rect class="s" x="90" y="206" width="76" height="12" rx="5" fill="var(--strap)"/>
+    <rect class="s" x="124" y="204" width="8" height="16" rx="2" fill="var(--strap)"/>
+  </g>
+
+  <!-- Canoe lip -->
+  <path class="s" fill="var(--canoe-trim)" d="M76 222a52 14 0 0 0 104 0v10a84 30 0 0 1-104 0v-10z"/>
+  <path class="s" fill="var(--canoe)" d="M76 222a52 14 0 0 0 104 0H76z"/>
+
+  <!-- Paddle (kept low so it never covers the face) -->
+  <g transform="translate(30,198) rotate(-8)">
+    <rect class="sf" x="0" y="8" width="150" height="6" rx="3" fill="var(--wood-dark)"/>
+    <ellipse class="s" cx="156" cy="11" rx="20" ry="14" fill="var(--wood)"/>
+  </g>
+</svg>

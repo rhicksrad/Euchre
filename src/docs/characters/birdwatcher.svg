@@ -1,0 +1,90 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" role="img" aria-label="Bird Watcher — person with binoculars and a cardinal in view">
+  <style>
+    :root{
+      --line:#121212;
+      --skin:#f3d0bb; --blush:#e8b7a4;
+      --hair:#3e2e26; --hair-shade:#2f231d;
+      --jacket:#556b5f; --jacket-trim:#37463f; --strap:#2b2b2b; --hardware:#111;
+      --bin:#1c1c1f; --bin-trim:#0e0e10; --glass:#7dcf9a22; --glass-shine:#ffffff40;
+      --shadow:#00000022;
+
+      /* Cardinal */
+      --cardinal:#c62828;
+      --cardinal-dark:#8e1515;
+      --beak:#f6a21a;
+    }
+    .s{stroke:var(--line);stroke-width:5.2;stroke-linecap:round;stroke-linejoin:round}
+    .sf{stroke:var(--line);stroke-width:4;stroke-linecap:round;stroke-linejoin:round}
+  </style>
+
+  <defs><clipPath id="head"><circle cx="128" cy="140" r="60"/></clipPath></defs>
+
+  <!-- Face -->
+  <circle class="s" cx="128" cy="140" r="60" fill="var(--skin)"/>
+  <circle class="s" cx="62"  cy="140" r="12" fill="var(--skin)"/>
+  <circle class="s" cx="194" cy="140" r="12" fill="var(--skin)"/>
+
+  <!-- Hair cap -->
+  <path clip-path="url(#head)" fill="var(--hair)"
+        d="M60 102 Q128 66 196 102 L196 126 Q128 114 60 126Z"/>
+  <path clip-path="url(#head)" d="M80 106 Q128 84 176 106" stroke="var(--hair-shade)" stroke-width="3" opacity=".35" fill="none"/>
+
+  <ellipse cx="128" cy="112" rx="82" ry="10" fill="var(--shadow)" clip-path="url(#head)"/>
+
+  <!-- Features -->
+  <path class="sf" d="M96 128q12-6 24-5" fill="none"/>
+  <path class="sf" d="M136 123q12-1 24 5" fill="none"/>
+  <circle cx="108" cy="142" r="6" fill="#111"/>
+  <circle cx="148" cy="142" r="6" fill="#111"/>
+  <path class="sf" d="M128 148c-2 6-2 8 0 10" fill="none"/>
+  <path class="sf" d="M104 162q24 12 48 0" fill="none"/>
+  <circle cx="100" cy="154" r="9" fill="var(--blush)" opacity=".9"/>
+  <circle cx="156" cy="154" r="9" fill="var(--blush)" opacity=".9"/>
+
+  <!-- Binoculars -->
+  <g>
+    <g fill="var(--bin)" stroke="var(--line)" stroke-width="5.2">
+      <circle cx="110" cy="140" r="22"/>
+      <circle cx="146" cy="140" r="22"/>
+    </g>
+    <rect x="120" y="134" width="16" height="12" rx="4" fill="var(--bin-trim)" stroke="var(--line)" stroke-width="4"/>
+    <circle cx="128" cy="140" r="6" fill="var(--bin-trim)" stroke="var(--line)" stroke-width="3"/>
+
+    <!-- lenses -->
+    <circle cx="110" cy="140" r="16" fill="var(--glass)" stroke="var(--line)" stroke-width="3"/>
+    <circle cx="146" cy="140" r="16" fill="var(--glass)" stroke="var(--line)" stroke-width="3"/>
+    <path d="M100 132q6-6 16-6" fill="none" stroke="var(--glass-shine)" stroke-width="3" stroke-linecap="round"/>
+    <path d="M136 132q6-6 16-6" fill="none" stroke="var(--glass-shine)" stroke-width="3" stroke-linecap="round"/>
+
+    <!-- Cardinal in RIGHT lens -->
+    <g transform="translate(146,140)">
+      <!-- perch -->
+      <path d="M-10,8 h20" stroke="#111" stroke-width="2" stroke-linecap="round" fill="none" opacity=".95"/>
+      <!-- body -->
+      <ellipse cx="-2" cy="2" rx="7.5" ry="5.5" fill="var(--cardinal)" />
+      <!-- wing -->
+      <ellipse cx="-1" cy="3" rx="4.5" ry="3" fill="var(--cardinal-dark)" />
+      <!-- head -->
+      <circle cx="5" cy="0" r="3.6" fill="var(--cardinal)"/>
+      <!-- crest -->
+      <path d="M7,-4 l3,-4 l1,5 Z" fill="var(--cardinal)"/>
+      <!-- face mask -->
+      <path d="M6,-1 q2,-1 2,1 q0,2 -2,2 q-2,0 -2,-2 q0,-2 2,-1Z" fill="#111"/>
+      <!-- beak -->
+      <path d="M9,0 l3,1 l-3,1 Z" fill="var(--beak)"/>
+      <!-- tail -->
+      <path d="M-8,4 l-5,4 l6,-1 Z" fill="var(--cardinal-dark)"/>
+      <!-- tiny eye -->
+      <circle cx="6" cy="0" r="0.7" fill="#111"/>
+    </g>
+
+    <!-- neck straps -->
+    <path class="s" fill="var(--strap)" d="M92 154 q-8 18 -10 40 h18 q2-20 8-36 Z"/>
+    <path class="s" fill="var(--strap)" d="M164 154 q8 18 10 40 h-18 q-2-20 -8-36 Z"/>
+  </g>
+
+  <!-- Jacket -->
+  <path class="s" fill="var(--jacket-trim)" d="M70 206a58 28 0 0 0 116 0v16a90 40 0 0 1-116 0v-16z"/>
+  <path class="s" fill="var(--jacket)" d="M70 206a58 28 0 0 0 116 0H70z"/>
+  <rect class="s" x="122" y="206" width="12" height="12" rx="2" fill="var(--hardware)"/>
+</svg>
