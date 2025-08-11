@@ -1,0 +1,113 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" role="img" aria-label="The Cartographer — round glasses, pencil behind ear, folded map and compass">
+  <style>
+    :root{
+      --line:#121212;
+
+      /* Skin & hair */
+      --skin:#f3d0bb; --blush:#e8b7a4;
+      --hair:#3b2c24; --hair-shade:#2e221d;
+
+      /* Outfit */
+      --jacket:#5f6e5f;      /* olive field jacket */
+      --jacket-trim:#3d4a40;
+      --hardware:#151a17;
+
+      /* Map */
+      --map:#f0efe7;
+      --map-fold:#d9d6c9;
+      --grid:#b7c5c9;
+      --route:#e4572e;
+
+      /* Glasses + pencil */
+      --frame:#111;
+      --lens:#ffffff20;
+      --pencil:#f6b73c;
+      --pencil-tip:#c07a35;
+      --pencil-eraser:#db6a6a;
+
+      --shadow:#00000022;
+    }
+    .s{stroke:var(--line);stroke-width:5.2;stroke-linecap:round;stroke-linejoin:round}
+    .sf{stroke:var(--line);stroke-width:4;stroke-linecap:round;stroke-linejoin:round}
+  </style>
+
+  <!-- Keep hair & pencil off the face -->
+  <defs>
+    <mask id="no-face-cover">
+      <rect x="0" y="0" width="256" height="256" fill="#fff"/>
+      <circle cx="128" cy="140" r="60" fill="#000"/>
+    </mask>
+    <clipPath id="head"><circle cx="128" cy="140" r="60"/></clipPath>
+  </defs>
+
+  <!-- ===== Face first ===== -->
+  <circle class="s" cx="128" cy="140" r="60" fill="var(--skin)"/>
+  <circle class="s" cx="62"  cy="140" r="12" fill="var(--skin)"/>
+  <circle class="s" cx="194" cy="140" r="12" fill="var(--skin)"/>
+
+  <!-- Hair cap inside the head -->
+  <path clip-path="url(#head)" fill="var(--hair)"
+        d="M58 96 Q128 58 198 96 L198 126 Q128 114 58 126Z"/>
+  <path clip-path="url(#head)" d="M80 102 Q128 78 176 102" stroke="var(--hair-shade)" stroke-width="3" opacity=".4" fill="none"/>
+
+  <!-- Forehead shadow -->
+  <ellipse cx="128" cy="112" rx="82" ry="10" fill="var(--shadow)" clip-path="url(#head)"/>
+
+  <!-- Brows / eyes / nose / smile -->
+  <path class="sf" d="M96 128q12-6 24-5" fill="none"/>
+  <path class="sf" d="M136 123q12-1 24 5" fill="none"/>
+  <circle cx="108" cy="142" r="6" fill="#111"/>
+  <circle cx="148" cy="142" r="6" fill="#111"/>
+  <path class="sf" d="M128 148c-2 6-2 8 0 10" fill="none"/>
+  <path class="sf" d="M104 162q24 12 48 0" fill="none"/>
+  <circle cx="100" cy="154" r="9" fill="var(--blush)" opacity=".9"/>
+  <circle cx="156" cy="154" r="9" fill="var(--blush)" opacity=".9"/>
+
+  <!-- ===== Hair extras & pencil (behind ear, never over face) ===== -->
+  <g mask="url(#no-face-cover)">
+    <!-- little side tufts -->
+    <path class="s" fill="var(--hair)" d="M48 146q-6 26 16 44q20 16 44 12q-26-16-26-52q-14-8-34-4Z"/>
+    <path class="s" fill="var(--hair)" d="M208 146q6 26-16 44q-20 16-44 12q26-16 26-52q14-8 34-4Z"/>
+    <!-- pencil behind (viewer’s left) ear -->
+    <g transform="rotate(-10 86 128)">
+      <rect x="70" y="120" width="36" height="6" rx="3" fill="var(--pencil)" stroke="var(--line)" stroke-width="3"/>
+      <polygon points="106,123 114,126 106,129" fill="var(--pencil-tip)" stroke="var(--line)" stroke-width="2"/>
+      <rect x="68" y="120" width="6" height="6" rx="2" fill="var(--pencil-eraser)" stroke="var(--line)" stroke-width="2"/>
+    </g>
+  </g>
+
+  <!-- ===== Round glasses (on top) ===== -->
+  <g stroke="var(--frame)" stroke-width="5" fill="none" stroke-linejoin="round" stroke-linecap="round">
+    <rect x="84"  y="128" width="40" height="28" rx="14" fill="var(--lens)"/>
+    <rect x="132" y="128" width="40" height="28" rx="14" fill="var(--lens)"/>
+    <path d="M124 142h8"/> <!-- bridge -->
+  </g>
+
+  <!-- ===== Jacket & map (below face) ===== -->
+  <path class="s" fill="var(--jacket-trim)" d="M70 206a58 28 0 0 0 116 0v16a90 40 0 0 1-116 0v-16z"/>
+  <path class="s" fill="var(--jacket)" d="M70 206a58 28 0 0 0 116 0H70z"/>
+
+  <!-- Folded map across the chest -->
+  <g>
+    <rect class="s" x="76" y="196" width="104" height="36" rx="6" fill="var(--map)"/>
+    <!-- fold shadows -->
+    <path d="M110 196v36M146 196v36" stroke="var(--map-fold)" stroke-width="6" opacity=".7"/>
+    <!-- grid -->
+    <g stroke="var(--grid)" stroke-width="1.4" opacity=".8">
+      <path d="M84 204h88M84 212h88M84 220h88"/>
+      <path d="M92 200v28M100 200v28M118 200v28M126 200v28M134 200v28M154 200v28M162 200v28M170 200v28"/>
+    </g>
+    <!-- route -->
+    <path d="M90 226q16-12 28-8t18-16q10-14 24-6" fill="none" stroke="var(--route)" stroke-width="4" stroke-linecap="round"/>
+    <!-- X marks the spot -->
+    <g stroke="var(--route)" stroke-width="3">
+      <path d="M154 204l6 6M160 204l-6 6"/>
+    </g>
+  </g>
+
+  <!-- Compass pendant -->
+  <g transform="translate(128,206)">
+    <circle class="s" cx="0" cy="8" r="8" fill="var(--map-fold)"/>
+    <path d="M0,1 v14 M-7,8 h14" stroke="var(--hardware)" stroke-width="2"/>
+  </g>
+</svg>

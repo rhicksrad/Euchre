@@ -1,0 +1,83 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" role="img" aria-label="Painter — long blond hair with higher, larger flipped bangs (no clipping)">
+  <style>
+    :root{
+      --line:#111; --skin:#f4cfb8; --blush:#e5b4a0;
+      --hair:#e3c26a; --hair-shade:#caa857;
+      --smock:#e8e3da; --smock-trim:#cfc8bb;
+      --palette:#b38759; --p1:#e94e77; --p2:#45b7d1; --p3:#ffd166; --p4:#06d6a0;
+    }
+    .s{stroke:var(--line);stroke-width:5.2;stroke-linecap:round;stroke-linejoin:round}
+    .sf{stroke:var(--line);stroke-width:4;stroke-linecap:round;stroke-linejoin:round}
+  </style>
+
+  <!-- Keep hair from covering face -->
+  <defs>
+    <mask id="no-face-cover">
+      <rect x="0" y="0" width="256" height="256" fill="#fff"/>
+      <circle cx="128" cy="140" r="60" fill="#000"/>
+    </mask>
+    <!-- Bigger, higher clip so flipped+scaled bangs don't get cut -->
+    <clipPath id="bangs-forehead" clipPathUnits="userSpaceOnUse">
+      <!-- centered around the face; widened + taller -->
+      <rect x="43" y="88" width="170" height="44" rx="14"/>
+    </clipPath>
+  </defs>
+
+  <!-- FACE -->
+  <circle class="s" cx="128" cy="140" r="60" fill="var(--skin)"/>
+  <circle class="s" cx="62"  cy="140" r="12" fill="var(--skin)"/>
+  <circle class="s" cx="194" cy="140" r="12" fill="var(--skin)"/>
+  <path class="sf" d="M96 128q12-6 24-5M136 123q12-1 24 5" fill="none"/>
+  <circle cx="108" cy="142" r="6" fill="#111"/><circle cx="148" cy="142" r="6" fill="#111"/>
+  <path class="sf" d="M128 148c-2 6-2 8 0 10M104 162q24 12 48 0" fill="none"/>
+  <circle cx="100" cy="154" r="9" fill="var(--blush)" opacity=".9"/>
+  <circle cx="156" cy="154" r="9" fill="var(--blush)" opacity=".9"/>
+
+  <!-- HAIR (behind face, masked) -->
+  <g mask="url(#no-face-cover)">
+    <path class="s" fill="var(--hair)" d="M64 118 q18-26 64-26t64 26 q-10 38-64 38t-64-38Z"/>
+    <path class="s" fill="var(--hair)" d="M48 148 q-6 28 18 44 q22 16 46 10 q-28-18-28-54 q-10-8-36 0Z"/>
+    <path class="s" fill="var(--hair)" d="M208 148 q6 28-18 44 q-22 16-46 10 q28-18 28-54 q10-8 36 0Z"/>
+    <path class="sf" d="M70 154q20 10 26 28M186 154q-20 10-26 28" stroke="var(--hair-shade)" opacity=".45" fill="none"/>
+  </g>
+
+  <!-- BANGS (flipped + 130% scale, moved up; now safely unclipped) -->
+  <g clip-path="url(#bangs-forehead)"
+     transform="translate(128,0) scale(1.3, -1.3) translate(-128,-195)">
+    <path class="s" fill="var(--hair)"
+      d="M70 114
+         q12 -10 24 -8
+         q12 2 20 10
+         q8 -10 16 -10
+         q10 0 18 10
+         q10 -8 22 -8
+         q14 2 26 10
+         q-18 12 -42 14
+         q-22 2 -44 0
+         q-28 -2 -40 -18Z"/>
+    <path class="sf" d="M92 114q6 6 6 16M116 112q4 8 2 16M140 112q-2 8 0 16M164 114q-6 6-6 16"
+          stroke="var(--hair-shade)" opacity=".5" fill="none"/>
+  </g>
+
+  <!-- SMOCK -->
+  <path class="s" fill="var(--smock-trim)" d="M70 196a58 28 0 0 0 116 0v16a90 40 0 0 1-116 0v-16z"/>
+  <path class="s" fill="var(--smock)" d="M70 196a58 28 0 0 0 116 0H70z"/>
+
+  <!-- Palette -->
+  <g transform="translate(58,196) rotate(-12)">
+    <ellipse class="s" cx="0" cy="18" rx="26" ry="20" fill="var(--palette)"/>
+    <circle cx="-10" cy="14" r="5" fill="var(--p1)"/>
+    <circle cx="6"   cy="10" r="5" fill="var(--p2)"/>
+    <circle cx="-4"  cy="26" r="5" fill="var(--p3)"/>
+    <circle cx="12"  cy="24" r="5" fill="var(--p4)"/>
+    <circle cx="-16" cy="22" r="6" fill="#d7b086"/>
+  </g>
+
+  <!-- Brush -->
+  <g>
+    <path class="sf" d="M180 140l30 -18" stroke="#4d3b2a"/>
+    <path class="sf" d="M210 122q8-4 14-2" stroke="#4d3b2a"/>
+    <path class="sf" d="M178 141l2 6" stroke="#4d3b2a"/>
+    <path class="sf" d="M222 122q-8 6-10 12" stroke="#c07a35"/>
+  </g>
+</svg>

@@ -1,0 +1,93 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" role="img" aria-label="Park ranger face, hat on top, collar + both earrings">
+  <style>
+    :root{
+      --line:#111;
+      --skin:#f4cfb8;
+      --blush:#e5b4a0;
+      --hair:#2b1e16;
+      --hat:#5f694c;     /* dome */
+      --brim:#4e5841;    /* brim */
+      --band:#232723;    /* band */
+      --badge:#d8c36c;
+      --shirt:#c8b792;   /* uniform tan */
+      --collar:#9f906f;
+      --shadow:#00000022;
+      --glass:#8f7bff;
+      --earring:#7d5a4a;
+    }
+    .s{stroke:var(--line);stroke-width:5.2;stroke-linecap:round;stroke-linejoin:round}
+    .sf{stroke:var(--line);stroke-width:4;stroke-linecap:round;stroke-linejoin:round}
+  </style>
+
+  <defs>
+    <clipPath id="headClip"><circle cx="128" cy="144" r="60"/></clipPath>
+    <linearGradient id="lens" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="var(--glass)" stop-opacity=".28"/>
+      <stop offset="1" stop-color="#fff" stop-opacity=".06"/>
+    </linearGradient>
+  </defs>
+
+  <!-- HEAD + EARS -->
+  <circle class="s" cx="128" cy="144" r="60" fill="var(--skin)"/>
+  <circle class="s" cx="62"  cy="144" r="12" fill="var(--skin)"/>
+  <circle class="s" cx="194" cy="144" r="12" fill="var(--skin)"/>
+
+  <!-- Hair peek -->
+  <path class="s" fill="var(--hair)" d="M84 126q22-18 44-18t44 18q-26 8-44 8t-44-8Z"/>
+
+  <!-- Forehead shadow -->
+  <ellipse cx="128" cy="114" rx="84" ry="14" fill="var(--shadow)" clip-path="url(#headClip)"/>
+
+  <!-- GLASSES -->
+  <g class="sf">
+    <rect x="86"  y="130" width="40" height="28" rx="8" fill="url(#lens)"/>
+    <rect x="130" y="130" width="40" height="28" rx="8" fill="url(#lens)"/>
+    <path d="M126 140h4" fill="none"/>
+  </g>
+
+  <!-- Eyes / brows / nose / mouth / cheeks -->
+  <circle cx="108" cy="142" r="6" fill="#111"/>
+  <circle cx="148" cy="142" r="6" fill="#111"/>
+  <path class="sf" d="M94 130q12-6 24-5" fill="none"/>
+  <path class="sf" d="M138 125q12-1 24 5" fill="none"/>
+  <path class="sf" d="M128 148c-2 6-2 8 0 10" fill="none"/>
+  <path class="sf" d="M104 162q24 12 48 0" fill="none"/>
+  <circle cx="100" cy="154" r="9" fill="var(--blush)" opacity=".85"/>
+  <circle cx="156" cy="154" r="9" fill="var(--blush)" opacity=".85"/>
+
+  <!-- Earrings (both sides) -->
+  <circle cx="62"  cy="156" r="6" fill="none" stroke="var(--earring)" stroke-width="4"/>
+  <circle cx="194" cy="156" r="6" fill="none" stroke="var(--earring)" stroke-width="4"/>
+
+  <!-- Collar / shirt -->
+  <path class="s" fill="var(--collar)" d="M76 196a52 24 0 0 0 104 0v16a84 36 0 0 1-104 0v-16z"/>
+  <path class="s" fill="var(--shirt)" d="M76 196a52 24 0 0 0 104 0H76z"/>
+  <rect class="s" x="122" y="196" width="12" height="20" rx="2" fill="var(--collar)"/>
+
+  <!-- ===================== HAT (drawn last; on top) ===================== -->
+  <g id="hat">
+    <!-- Back brim -->
+    <ellipse class="s" cx="128" cy="110" rx="108" ry="20" fill="var(--brim)"/>
+    <!-- Dome / crown (tall) -->
+    <path class="s" fill="var(--hat)"
+          d="M44 106
+             Q128 -80 212 106
+             L212 124
+             Q128 140 44 124 Z"/>
+    <!-- Front brim -->
+    <ellipse class="s" cx="128" cy="110" rx="108" ry="20" fill="var(--brim)"/>
+    <!-- Band (top) -->
+    <path class="s" fill="var(--band)"
+          d="M62 116
+             Q128 108 194 116
+             v12
+             Q128 134 62 126 Z"/>
+    <!-- Badge (very top) -->
+    <path class="s" fill="var(--badge)"
+          d="M128 90
+             q14 0 18 12
+             q0 14-18 26
+             q-18-12-18-26
+             q4-12 18-12Z"/>
+  </g>
+</svg>

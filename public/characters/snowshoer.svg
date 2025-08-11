@@ -1,0 +1,117 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" role="img" aria-label="The Snowshoer — winter face with beanie and falling snow">
+  <style>
+    :root{
+      --line:#111;
+      --skin:#f4cfb8;
+      --blush:#e5b4a0;
+      --hair:#3a2920;
+
+      /* Beanie (snow cap) */
+      --hat:#2f6aa3;      /* dome */
+      --hat-fold:#275986; /* fold/brim */
+      --pom:#e6f2ff;      /* pom color */
+      --snowcap:#ffffff;  /* snow built up on hat */
+
+      /* Outerwear */
+      --parka:#39525f;
+      --parka-trim:#22323a;
+      --scarf:#b43c3c;
+
+      /* Snow */
+      --snow:#ffffff;
+    }
+    .s{stroke:var(--line);stroke-width:5.2;stroke-linecap:round;stroke-linejoin:round}
+    .sf{stroke:var(--line);stroke-width:4;stroke-linecap:round;stroke-linejoin:round}
+
+    /* Snow animation (light + subtle) */
+    @keyframes fall {
+      0%   { transform: translateY(-16px) translateX(0);    opacity:.9; }
+      100% { transform: translateY(220px) translateX(8px);  opacity:.0; }
+    }
+    .flake { fill: var(--snow); opacity:.9 }
+    .f1{ animation: fall 5.5s linear infinite; }
+    .f2{ animation: fall 6.2s linear infinite; }
+    .f3{ animation: fall 7.0s linear infinite; }
+    .f4{ animation: fall 8.0s linear infinite; }
+  </style>
+
+  <!-- ===== Head + ears ===== -->
+  <circle class="s" cx="128" cy="140" r="60" fill="var(--skin)"/>
+  <circle class="s" cx="62"  cy="140" r="12" fill="var(--skin)"/>
+  <circle class="s" cx="194" cy="140" r="12" fill="var(--skin)"/>
+
+  <!-- Hair peeking under cap -->
+  <path class="s" fill="var(--hair)"
+        d="M82 124 q24-18 46-18t46 18 q-26 10-46 10t-46-10Z"/>
+
+  <!-- Face -->
+  <circle cx="108" cy="142" r="6" fill="#111"/>
+  <circle cx="148" cy="142" r="6" fill="#111"/>
+  <path class="sf" d="M94 130q12-6 24-5" fill="none"/>
+  <path class="sf" d="M138 125q12-1 24 5" fill="none"/>
+  <path class="sf" d="M128 148c-2 6-2 8 0 10" fill="none"/>
+  <path class="sf" d="M104 162q24 12 48 0" fill="none"/>
+  <circle cx="100" cy="154" r="9" fill="var(--blush)" opacity=".9"/>
+  <circle cx="156" cy="154" r="9" fill="var(--blush)" opacity=".9"/>
+
+  <!-- Scarf + parka -->
+  <path class="s" fill="var(--scarf)"
+        d="M88 186 q20 16 40 16t40-16 v14 q-20 16-40 16t-40-16 v-14Z"/>
+  <path class="s" fill="var(--parka-trim)"
+        d="M70 196 a58 28 0 0 0 116 0 v16 a90 40 0 0 1-116 0 v-16Z"/>
+  <path class="s" fill="var(--parka)" d="M70 196 a58 28 0 0 0 116 0H70Z"/>
+
+  <!-- Under-cap forehead shadow (subtle) -->
+  <defs><clipPath id="head"><circle cx="128" cy="140" r="60"/></clipPath></defs>
+  <ellipse cx="128" cy="108" rx="82" ry="12" fill="#00000025" clip-path="url(#head)"/>
+
+  <!-- ===================== HAT (drawn last; on top) ===================== -->
+  <g id="hat">
+    <!-- Beanie dome -->
+    <path class="s" fill="var(--hat)"
+      d="M52 106
+         Q84 70, 128 66
+         Q172 70, 204 106
+         L204 118
+         Q128 130, 52 118 Z"/>
+
+    <!-- Snow built up on top (wavy cap of snow) -->
+    <path class="sf" fill="var(--snowcap)"
+      d="M74 94
+         q12 -10 28 -8
+         q10 2 26 -2
+         q14 -4 26 2
+         q16 8 28 6
+         q-6 10 -20 12
+         q-14 2 -30 0
+         q-18 -2 -28 0
+         q-12 2 -30 -10Z" opacity=".95"/>
+
+    <!-- Beanie fold/brim in front -->
+    <path class="s" fill="var(--hat-fold)"
+      d="M60 116
+         Q128 110, 196 116
+         v16
+         Q128 136, 60 132 Z"/>
+
+    <!-- Pompom -->
+    <circle class="s" cx="128" cy="60" r="14" fill="var(--pom)"/>
+  </g>
+
+  <!-- ========== Foreground Snowflakes (small; won’t obscure features) ========== -->
+  <g id="snow">
+    <circle class="flake f1" cx="28"  cy="20"  r="2.4" />
+    <circle class="flake f2" cx="64"  cy="8"   r="1.8" />
+    <circle class="flake f3" cx="92"  cy="14"  r="2.2" />
+    <circle class="flake f4" cx="120" cy="4"   r="1.6" />
+    <circle class="flake f2" cx="150" cy="12"  r="2.0" />
+    <circle class="flake f3" cx="178" cy="6"   r="2.6" />
+    <circle class="flake f1" cx="206" cy="18"  r="2.2" />
+    <circle class="flake f4" cx="230" cy="2"   r="1.8" />
+    <!-- a few mid-layer flakes -->
+    <circle class="flake f2" cx="46"  cy="36"  r="1.6" />
+    <circle class="flake f3" cx="136" cy="34"  r="1.8" />
+    <circle class="flake f1" cx="196" cy="28"  r="1.6" />
+    <circle class="flake f4" cx="90"  cy="40"  r="1.4" />
+  </g>
+</svg>

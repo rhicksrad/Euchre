@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" role="img" aria-label="Hiker — brunette woman with full hair dome, top-right ponytail, black sunglasses">
+  <style>
+    :root{
+      --line:#121212;
+      --skin:#f3d0bb; --blush:#e8b7a4;
+      --hair:#4b352a; --hair-shade:#3c2a22; --scrunchie:#d07a3d;
+      --jacket:#5d7b6f; --jacket-trim:#3c5049; --strap:#2d3633; --hardware:#1f2624;
+      --shadow:#00000022;
+    }
+    .s{stroke:var(--line);stroke-width:5.2;stroke-linecap:round;stroke-linejoin:round}
+    .sf{stroke:var(--line);stroke-width:4;stroke-linecap:round;stroke-linejoin:round}
+  </style>
+
+  <defs>
+    <mask id="no-face-cover">
+      <rect x="0" y="0" width="256" height="256" fill="#fff"/>
+      <circle cx="128" cy="140" r="60" fill="#000"/>
+    </mask>
+    <clipPath id="head"><circle cx="128" cy="140" r="60"/></clipPath>
+  </defs>
+
+  <!-- Face -->
+  <circle class="s" cx="128" cy="140" r="60" fill="var(--skin)"/>
+  <circle class="s" cx="62"  cy="140" r="12" fill="var(--skin)"/>
+  <circle class="s" cx="194" cy="140" r="12" fill="var(--skin)"/>
+
+  <!-- Full hair dome -->
+  <path clip-path="url(#head)" fill="var(--hair)"
+        d="M60 92 Q128 50 196 92 L196 128 Q128 114 60 128Z"/>
+  <path clip-path="url(#head)" d="M76 98 Q128 70 180 98" stroke="var(--hair-shade)" stroke-width="3" opacity=".35" fill="none"/>
+
+  <ellipse cx="128" cy="112" rx="80" ry="10" fill="var(--shadow)" clip-path="url(#head)"/>
+
+  <!-- Face details -->
+  <circle cx="108" cy="142" r="6" fill="#111"/>
+  <circle cx="148" cy="142" r="6" fill="#111"/>
+  <path class="sf" d="M96 128q12-6 24-5" fill="none"/>
+  <path class="sf" d="M136 123q12-1 24 5" fill="none"/>
+  <path class="sf" d="M128 148c-2 6-2 8 0 10" fill="none"/>
+  <path class="sf" d="M104 162q24 12 48 0" fill="none"/>
+  <circle cx="100" cy="154" r="9" fill="var(--blush)" opacity=".9"/>
+  <circle cx="156" cy="154" r="9" fill="var(--blush)" opacity=".9"/>
+
+  <!-- Black sunglasses -->
+  <g class="sf">
+    <rect x="86"  y="130" width="42" height="26" rx="7" fill="#111"/>
+    <rect x="128" y="130" width="42" height="26" rx="7" fill="#111"/>
+    <path d="M128 140h-6m12 0h-6" fill="none"/>
+  </g>
+
+  <!-- Ponytail (top-right), no side hair at ears -->
+  <g mask="url(#no-face-cover)">
+    <circle class="s" cx="178" cy="92" r="10" fill="var(--scrunchie)"/>
+    <path class="s" fill="var(--hair)"
+          d="M184 96 q28 8 32 28 q4 22-22 40 q-18 10-28 0 q12-14 14-26 q2-12-6-26 q6-8 10-16Z"/>
+  </g>
+
+  <!-- Jacket + straps (below face) -->
+  <path class="s" fill="var(--jacket-trim)" d="M70 204a58 28 0 0 0 116 0v16a90 40 0 0 1-116 0v-16z"/>
+  <path class="s" fill="var(--jacket)" d="M70 204a58 28 0 0 0 116 0H70z"/>
+  <rect class="s" x="86"  y="198" width="20" height="36" rx="4" fill="var(--strap)"/>
+  <rect class="s" x="150" y="198" width="20" height="36" rx="4" fill="var(--strap)"/>
+  <rect class="s" x="94" y="208" width="68" height="10" rx="4" fill="var(--strap)"/>
+  <rect class="s" x="122" y="206" width="12" height="14" rx="2" fill="var(--hardware)"/>
+</svg>
