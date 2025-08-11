@@ -1,0 +1,104 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" role="img" aria-label="Flyfisher face — brown flat-top fishing hat">
+  <style>
+    :root{
+      --line:#111;
+      --skin:#f4cfb8;
+      --blush:#e5b4a0;
+      --hair:#3a2920;
+
+      /* Brown hat */
+      --hat:#7a5a2f;     /* dome */
+      --brim:#6a4b23;    /* brim */
+      --band:#2c251d;    /* band */
+
+      --lure1:#d97e4a;   /* orange fly */
+      --lure2:#4ab3d9;   /* teal fly */
+      --lure3:#c94ad9;   /* magenta fly */
+
+      --vest:#bcae8d;    /* fishing vest */
+      --collar:#9a8d70;
+
+      --shadow:#00000022;
+    }
+    .s{stroke:var(--line);stroke-width:5.2;stroke-linecap:round;stroke-linejoin:round}
+    .sf{stroke:var(--line);stroke-width:4;stroke-linecap:round;stroke-linejoin:round}
+  </style>
+
+  <!-- Defs -->
+  <defs>
+    <clipPath id="clipHead"><circle cx="128" cy="144" r="60"/></clipPath>
+  </defs>
+
+  <!-- Head + ears -->
+  <circle class="s" cx="128" cy="144" r="60" fill="var(--skin)"/>
+  <circle class="s" cx="62"  cy="144" r="12" fill="var(--skin)"/>
+  <circle class="s" cx="194" cy="144" r="12" fill="var(--skin)"/>
+
+  <!-- Hair -->
+  <path class="s" fill="var(--hair)"
+        d="M80 124 q24-18 48-18t48 18 q-30 10-48 10t-48-10Z"/>
+  <path class="s" fill="var(--hair)"
+        d="M46 148 q-4 14 10 24 q16 10 30 8 q-20-10-20-30 q-8-6-20-2Z"/>
+  <path class="s" fill="var(--hair)"
+        d="M210 148 q4 14-10 24 q-16 10-30 8 q20-10 20-30 q8-6 20-2Z"/>
+
+  <!-- Forehead shadow -->
+  <ellipse cx="128" cy="114" rx="84" ry="14" fill="var(--shadow)" clip-path="url(#clipHead)"/>
+
+  <!-- Face -->
+  <circle cx="108" cy="142" r="6" fill="#111"/>
+  <circle cx="148" cy="142" r="6" fill="#111"/>
+  <path class="sf" d="M94 130q12-6 24-5" fill="none"/>
+  <path class="sf" d="M138 125q12-1 24 5" fill="none"/>
+  <path class="sf" d="M128 148c-2 6-2 8 0 10" fill="none"/>
+  <path class="sf" d="M104 162q24 12 48 0" fill="none"/>
+  <circle cx="100" cy="154" r="9" fill="var(--blush)" opacity=".85"/>
+  <circle cx="156" cy="154" r="9" fill="var(--blush)" opacity=".85"/>
+
+  <!-- Vest collar + shoulders -->
+  <path class="s" fill="var(--collar)" d="M72 194a56 26 0 0 0 112 0v16a88 38 0 0 1-112 0v-16z"/>
+  <path class="s" fill="var(--vest)" d="M72 194a56 26 0 0 0 112 0H72z"/>
+  <rect class="sf" x="86" y="196" width="28" height="16" rx="2" fill="none"/>
+  <rect class="sf" x="142" y="196" width="28" height="16" rx="2" fill="none"/>
+
+  <!-- ===================== HAT (drawn last; on top) ===================== -->
+  <g id="hat">
+    <!-- Back brim -->
+    <ellipse class="s" cx="128" cy="110" rx="108" ry="20" fill="var(--brim)"/>
+
+    <!-- FLAT-TOP DOME / CROWN -->
+    <!-- Rounded shoulders up to a flat top, then back down -->
+    <path class="s" fill="var(--hat)"
+      d="M48 108
+         Q68 76, 100 68
+         L156 68
+         Q188 76, 208 108
+         L208 126
+         Q128 142, 48 126 Z"/>
+
+    <!-- Front brim -->
+    <ellipse class="s" cx="128" cy="110" rx="108" ry="20" fill="var(--brim)"/>
+
+    <!-- Band (on top) -->
+    <path class="s" fill="var(--band)"
+          d="M64 118
+             Q128 110 192 118
+             v12
+             Q128 136 64 130 Z"/>
+
+    <!-- Lures (topmost) -->
+    <g>
+      <path class="sf" d="M92 124l-12 8" stroke="var(--lure1)"/>
+      <circle cx="92" cy="124" r="3.5" fill="var(--lure1)" stroke="var(--line)" stroke-width="2"/>
+      <path class="sf" d="M92 124c6 2 10 2 14 0" stroke="var(--lure1)"/>
+
+      <path class="sf" d="M128 122l-10 10" stroke="var(--lure2)"/>
+      <circle cx="128" cy="122" r="3.5" fill="var(--lure2)" stroke="var(--line)" stroke-width="2"/>
+      <path class="sf" d="M128 122c6 3 10 3 14 0" stroke="var(--lure2)"/>
+
+      <path class="sf" d="M164 124l-12 8" stroke="var(--lure3)"/>
+      <circle cx="164" cy="124" r="3.5" fill="var(--lure3)" stroke="var(--line)" stroke-width="2"/>
+      <path class="sf" d="M164 124c6 2 10 2 14 0" stroke="var(--lure3)"/>
+    </g>
+  </g>
+</svg>

@@ -1,0 +1,94 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" role="img" aria-label="Lodge Chef — Black man with goatee and chef hat (toque)">
+  <style>
+    :root{
+      --line:#121212;
+
+      /* Skin & hair */
+      --skin:#5a3a2d;       /* deep brown */
+      --blush:#7a5242;      /* subtle cheek tint */
+      --hair:#221713;       /* hair/goatee */
+
+      /* Hat & coat */
+      --toque:#f7f8fc;      /* chef hat */
+      --toque-fold:#e7eaf1; /* brim/fold */
+      --pleat:#cfd5e6;      /* pleats */
+
+      --coat:#f2f0eb;       /* chef coat */
+      --apron:#3f5a35;      /* lodge green apron */
+      --trim:#283723;
+
+      --shadow:#00000022;
+      --button:#1b1b1b;
+    }
+    .s{stroke:var(--line);stroke-width:5.2;stroke-linecap:round;stroke-linejoin:round}
+    .sf{stroke:var(--line);stroke-width:4;stroke-linecap:round;stroke-linejoin:round}
+  </style>
+
+  <!-- Face first -->
+  <circle class="s" cx="128" cy="140" r="60" fill="var(--skin)"/>
+  <circle class="s" cx="62"  cy="140" r="12" fill="var(--skin)"/>
+  <circle class="s" cx="194" cy="140" r="12" fill="var(--skin)"/>
+
+  <!-- Keep a hint of hair so he never reads bald (inside head only) -->
+  <defs><clipPath id="head"><circle cx="128" cy="140" r="60"/></clipPath></defs>
+  <path clip-path="url(#head)" fill="var(--hair)"
+        d="M70 112Q128 90 186 112v10Q128 118 70 122Z"/>
+
+  <!-- Under-hat forehead shadow -->
+  <ellipse cx="128" cy="106" rx="78" ry="10" fill="var(--shadow)" clip-path="url(#head)"/>
+
+  <!-- Eyes / brows / nose / smile -->
+  <circle cx="108" cy="142" r="6" fill="#111"/>
+  <circle cx="148" cy="142" r="6" fill="#111"/>
+  <path class="sf" d="M96 128q12-6 24-5" fill="none"/>
+  <path class="sf" d="M136 123q12-1 24 5" fill="none"/>
+  <path class="sf" d="M128 146c-2 6-2 8 0 10" fill="none"/>
+  <path class="sf" d="M104 160q24 12 48 0" fill="none"/>
+  <circle cx="100" cy="154" r="8.5" fill="var(--blush)" opacity=".45"/>
+  <circle cx="156" cy="154" r="8.5" fill="var(--blush)" opacity=".45"/>
+
+  <!-- Goatee (mustache + chin patch) -->
+  <g>
+    <path class="sf" d="M118 150q-12 10-26 0" fill="none"/>
+    <path class="sf" d="M138 150q12 10 26 0" fill="none"/>
+    <path class="s" fill="var(--hair)"
+          d="M114 168 q14 10 28 0 q-2 16-14 20t-14-20Z"/>
+  </g>
+
+  <!-- Coat + lodge apron -->
+  <path class="s" fill="var(--coat)" d="M72 194a56 26 0 0 0 112 0v16a88 38 0 0 1-112 0v-16z"/>
+  <path class="s" fill="var(--apron)" d="M76 196a52 18 0 0 0 104 0H76z"/>
+  <rect class="s" x="122" y="196" width="12" height="18" rx="2" fill="var(--trim)"/>
+  <circle cx="112" cy="198" r="3.5" fill="var(--button)"/>
+  <circle cx="144" cy="198" r="3.5" fill="var(--button)"/>
+  <circle cx="112" cy="210" r="3.5" fill="var(--button)"/>
+  <circle cx="144" cy="210" r="3.5" fill="var(--button)"/>
+
+  <!-- === Chef hat (toque) — drawn last, but lifted so it doesn't cover eyes === -->
+  <g id="toque">
+    <!-- back puff -->
+    <path class="s" fill="var(--toque)"
+          d="M48 92
+             q10 -34 44 -44
+             q36 -10 72 0
+             q34 10 44 44
+             v14
+             q-40 12 -88 12
+             t-72 -12v-14Z"/>
+    <!-- fold / band (higher & slimmer) -->
+    <path class="s" fill="var(--toque-fold)"
+          d="M58 104
+             q34 10 70 12
+             q34 -2 70 -12
+             v12
+             q-42 12 -70 12
+             q-28 0 -70 -12Z"/>
+    <!-- soft pleats -->
+    <g stroke="var(--pleat)" fill="none" stroke-width="3" opacity=".6">
+      <path d="M84 66q-6 22 4 42"/>
+      <path d="M108 60q-4 24 2 44"/>
+      <path d="M148 60q4 24-2 44"/>
+      <path d="M172 66q6 22-4 42"/>
+    </g>
+  </g>
+</svg>
