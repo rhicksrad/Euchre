@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Card } from '../../game/rules/deck';
 import { CardView } from './CardView';
+import { CardBack } from './CardBack';
 import { useGameStore } from '../../state/store';
 
 type Props = {
@@ -17,16 +18,9 @@ export function DealerDiscardModal({ open, cards, onDiscard, isPlayer }: Props) 
   useEffect(() => {
     if (open) {
       setAnimating(true);
-      // Auto-select for AI after a delay
-      if (!isPlayer && cards.length > 0) {
-        setTimeout(() => {
-          // AI picks a card (using existing logic)
-          const randomIdx = Math.floor(Math.random() * cards.length);
-          onDiscard(cards[randomIdx]);
-        }, 1500);
-      }
+      // When AI is dealer, store logic will trigger discard; UI should not reveal cards or choose.
     }
-  }, [open, isPlayer, cards, onDiscard]);
+  }, [open]);
 
   if (!open) return null;
 
@@ -67,7 +61,7 @@ export function DealerDiscardModal({ open, cards, onDiscard, isPlayer }: Props) 
                   : 'hover:transform hover:-translate-y-1'
               } ${!isPlayer ? 'cursor-not-allowed' : 'cursor-pointer'}`}
             >
-              <CardView card={card} />
+              {isPlayer ? <CardView card={card} /> : <CardBack />}
             </button>
           ))}
         </div>
